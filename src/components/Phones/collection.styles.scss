@@ -1,0 +1,40 @@
+.phones-collection {
+  width: 85%;
+  margin: 5rem auto;
+  .phones-view {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-row-gap: 5rem;
+    grid-column-gap: 50px;
+  }
+}
+
+.phones-message {
+  margin: 0 2rem;
+  margin-top: 5rem;
+
+  text-align: center;
+
+  h3 {
+    font-family: "Sigmar One", cursive;
+    font-weight: 100;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .phones-message {
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .phones-message {
+    h3 {
+      font-size: 1rem;
+    }
+  }
+}
