@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import "./phone.styles.scss";
 
 const CollectionItem = ({ item }) => {
-  const { id, company, name, price, image } = item;
+  const { id, company, name, price, imageUrl } = item;
   return (
     <div className="collection-item">
-      <div className="image" style={{ backgroundImage: `url(${image})` }}>
+      <div className="image" style={{ backgroundImage: `url(${imageUrl})` }}>
         <Link to={`/phone/${id}`} className="btn-phone phone-link">
           DETAILS
         </Link>
