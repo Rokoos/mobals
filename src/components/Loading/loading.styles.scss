@@ -1,0 +1,38 @@
+.loading {
+  font-family: "Sigmar One", cursive;
+  text-align: center;
+  margin-top: 16rem;
+  p {
+    font-size: 1.6rem;
+  }
+  img {
+    margin: 2rem;
+    width: 7rem;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .loading {
+    margin-top: 10rem;
+    p {
+      font-size: 1.3rem;
+    }
+    img {
+      margin: 2rem;
+      width: 5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .loading {
+    margin-top: 7rem;
+    p {
+      font-size: 1rem;
+    }
+    img {
+      margin: 2rem;
+      width: 3rem;
+    }
+  }
+}

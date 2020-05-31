@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Phone from "../Phone/Phone";
-import "./collection.styles.scss";
+import "./phones.styles.scss";
 
 const Phones = ({ phones }) => {
   const displayPhones = () => {
@@ -14,7 +14,7 @@ const Phones = ({ phones }) => {
       </div>
     );
   };
-  return <div>{displayPhones()}</div>;
+  return <Fragment>{displayPhones()}</Fragment>;
 };
 
 export default Phones;
