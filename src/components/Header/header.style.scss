@@ -1,0 +1,103 @@
+.phones-header {
+  position: fixed;
+  top: 0;
+  height: 70px;
+  width: 87vw;
+  display: flex;
+  padding-top: 1rem;
+  justify-content: space-between;
+  border-bottom: solid 1px #50a8e1;
+  font-size: 1.3rem;
+  background-color: white;
+  z-index: 1;
+  .phones-homepage {
+    display: flex;
+    align-items: center;
+
+    .phones-logo img {
+      width: 12rem;
+      padding-left: 1rem;
+    }
+  }
+
+  .phones-options {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .signBtn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    font-family: "Sigmar One", cursive;
+  }
+  .phones-option {
+    position: relative;
+    padding: 10px 30px;
+    cursor: pointer;
+
+    .phones-notification {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.8rem;
+      height: 1.65rem;
+      width: 1.65rem;
+      border-radius: 50%;
+      background-color: red;
+      color: #fff;
+      position: absolute;
+      bottom: 2.3rem;
+      left: 3rem;
+    }
+  }
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+@media screen and (min-width: 1901px) {
+  .phones-header {
+    width: 1500px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .phones-header {
+    padding-top: 1rem;
+  }
+}
+@media screen and (max-width: 740px) {
+  .phones-header {
+    width: 80%;
+    font-size: 1rem;
+    padding-top: 0;
+
+    .phones-homepage {
+      .phones-logo img {
+        width: 9rem;
+      }
+    }
+    .phones-option {
+      padding: 10px 10px 10px 0;
+      .phones-notification {
+        left: 1.1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .phones-header {
+    .phones-homepage {
+      .phones-logo img {
+        width: 7rem;
+        padding-left: 5px;
+      }
+    }
+    .phones-option {
+      padding: 10px 2px 10px 0;
+    }
+  }
+}
