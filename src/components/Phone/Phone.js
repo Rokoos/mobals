@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { addItem } from "../../actions";
 import "./phone.styles.scss";
 
-const CollectionItem = ({ item }) => {
+const Phone = ({ item, addItem }) => {
   const { id, company, name, price, imageUrl } = item;
   return (
     <div className="collection-item">
@@ -20,9 +22,11 @@ const CollectionItem = ({ item }) => {
           <span>€{price}</span>
         </div>
       </div>
-      <button className="getIt">Add to cart</button>
+      <button className="getIt" onClick={() => addItem(item)}>
+        Add to cart
+      </button>
     </div>
   );
 };
 
-export default CollectionItem;
+export default connect(null, { addItem })(Phone);
