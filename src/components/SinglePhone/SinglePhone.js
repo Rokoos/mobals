@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Loading from "../Loading/Loading";
-import { startFetchPhone } from "../../actions";
+import { addItem, startFetchPhone } from "../../actions";
 import "./singlePhone.style.scss";
 
 class SinglePhone extends Component {
@@ -61,7 +61,12 @@ class SinglePhone extends Component {
           </a>
         </div>
         <div className="button-box">
-          <button className="addItemBox-add getIt">Add phone to cart</button>
+          <button
+            className="addItemBox-add getIt"
+            onClick={() => this.props.addItem(this.props.phone)}
+          >
+            Add phone to cart
+          </button>
           <Link to="/cart">
             <button className="addItemBox-cart">Go to cart</button>
           </Link>
@@ -81,5 +86,6 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
+  addItem,
   startFetchPhone,
 })(SinglePhone);
