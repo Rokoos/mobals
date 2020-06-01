@@ -1,4 +1,4 @@
-import { FETCH_PHONE, FETCH_PHONES, SET_LOADING } from "./types";
+import { FETCH_PHONE, FETCH_PHONES, SET_LOADING, PHONE_LOADING } from "./types";
 import { db } from "../firebase/firebase";
 
 const fetchPhones = (phones) => ({
@@ -28,8 +28,25 @@ export const startFetchPhones = () => {
       });
   };
 };
-
+export const phoneLoading = () => ({
+  type: PHONE_LOADING,
+});
 const fetchPhone = (phone) => ({
   type: FETCH_PHONE,
   phone,
 });
+
+export const startFetchPhone = (id) => {
+  return (dispatch) => {
+    return db
+      .collection("phones")
+      .doc(`${id}`)
+      .get()
+      .then((doc) => {
+        const phone = [];
+        phone.push({ id: doc.id, ...doc.data() });
+        dispatch(fetchPhone(phone[0]));
+        dispatch(phoneLoading());
+      });
+  };
+};

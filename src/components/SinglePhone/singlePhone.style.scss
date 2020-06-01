@@ -1,0 +1,107 @@
+.singlePhoneBox {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20rem;
+
+  .singlePhoneSpecs {
+    padding-right: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .feature {
+      // background-color: tomato;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 1.2rem;
+      p {
+        color: #333;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .paragraph {
+        padding: 0 1rem;
+        font-weight: 400;
+      }
+    }
+    a {
+      text-decoration: underline;
+      font-size: 1.3rem;
+      color: #555;
+      font-family: "Josefin Sans", sans-serif;
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+
+  .button-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    padding-right: 6rem;
+
+    .addItemBox-add,
+    .addItemBox-cart,
+    .addItemBox-shopping {
+      width: 100%;
+      padding: 1rem 1rem;
+      margin: 0.5rem 0;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease-in-out;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1rem;
+
+      &:hover {
+        background-color: #ccc;
+        color: #444;
+      }
+    }
+    .addItemBox-add {
+      background-color: #50a8e1;
+    }
+    .addItemBox-cart {
+      background-color: #ff9900;
+    }
+    .addItemBox-shopping {
+      background-color: #666;
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .singlePhoneBox {
+    width: 30%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+
+    .singlePhoneSpecs {
+      width: 13rem;
+      padding-right: 0;
+      margin-top: 1rem;
+      a {
+        text-align: center;
+        font-size: 1.1rem;
+        padding: 1rem 0;
+      }
+      .feature {
+        justify-content: space-between;
+        padding: 1rem 0;
+        font-size: 1rem;
+      }
+    }
+
+    .button-box {
+      width: 11rem;
+      margin: 2rem 0;
+      padding-right: 0;
+    }
+  }
+}
