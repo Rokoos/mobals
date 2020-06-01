@@ -1,9 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { cartItemsCount } from "../../utils";
 import "./header.style.scss";
 
-const Header = () => {
+const Header = ({ cartTotalCount }) => {
   return (
     <div className="phones-header">
       <div className="phones-homepage">
@@ -17,10 +19,15 @@ const Header = () => {
           <AiOutlineShoppingCart
             style={{ fontSize: "2.5rem", color: "#555" }}
           />
+          {cartTotalCount > 0 && (
+            <div className="phones-notification">{cartTotalCount}</div>
+          )}
         </Link>
       </div>
     </div>
   );
 };
-
-export default Header;
+const mapStateToProps = (state) => ({
+  cartTotalCount: cartItemsCount(state.cart.cartItems),
+});
+export default connect(mapStateToProps)(Header);
