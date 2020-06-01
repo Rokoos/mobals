@@ -1,4 +1,13 @@
-import { FETCH_PHONE, FETCH_PHONES, SET_LOADING, PHONE_LOADING } from "./types";
+import {
+  FETCH_PHONE,
+  FETCH_PHONES,
+  SET_LOADING,
+  PHONE_LOADING,
+  ADD_ITEM,
+  REMOVE_ITEM,
+  CLEAR_CART,
+  CLEAR_ITEM_FROM_CART,
+} from "./types";
 import { db } from "../firebase/firebase";
 
 const fetchPhones = (phones) => ({
@@ -50,3 +59,21 @@ export const startFetchPhone = (id) => {
       });
   };
 };
+export const addItem = (item) => ({
+  type: ADD_ITEM,
+  item,
+});
+
+export const removeItem = (item) => ({
+  type: REMOVE_ITEM,
+  item,
+});
+
+export const clearItemFromCart = (item) => ({
+  type: CLEAR_ITEM_FROM_CART,
+  item,
+});
+
+export const clearCart = () => ({
+  type: CLEAR_CART,
+});
