@@ -1,3 +1,29 @@
+export const filterItems = ({ phones, price, brand, storage, memory }) => {
+  let tempCollection = [...phones];
+
+  tempCollection = tempCollection.filter((item) => item.price <= price);
+
+  if (brand !== "All") {
+    tempCollection = tempCollection.filter((item) => item.company === brand);
+  }
+
+  if (storage !== "All") {
+    tempCollection = tempCollection.filter(
+      (item) => item.storage === parseInt(storage)
+    );
+  }
+  if (memory !== "All") {
+    tempCollection = tempCollection.filter(
+      (item) => item.memory === parseInt(memory)
+    );
+  }
+  return tempCollection.sort((a, b) => (a.price < b.price ? 1 : -1));
+};
+
+export const getUnique = (items, value) => {
+  return [...new Set(items.map((item) => item[value]))];
+};
+
 export const addItemToCart = (cartItems, cartItemToAdd) => {
   const existingCartItem = cartItems.find(
     (cartItem) => cartItem.id === cartItemToAdd.id
