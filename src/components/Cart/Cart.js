@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { withRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
-
+import CartItem from "../CartItem/CartItem";
 import { clearCart } from "../../actions";
 import { getTotalCartPrice, cartItemsCount } from "../../utils";
 import "./cart.styles.scss";
@@ -26,7 +26,7 @@ const Cart = ({ cartTotalCount, cartItems, history, clearCart }) => {
       </div>
       <Fragment>
         {cartItems.map((item) => (
-          <h1 key={item.id}>{item.name}</h1>
+          <CartItem key={item.id} item={item} />
         ))}
       </Fragment>
 

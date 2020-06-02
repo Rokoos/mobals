@@ -1,0 +1,86 @@
+.checkout-page {
+  font-family: "Josefin Sans", sans-serif;
+  width: 75%;
+  margin: 20px auto;
+
+  .checkout-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .header-medium,
+    .header-small {
+      display: flex;
+      justify-content: center;
+    }
+    .header-medium {
+      width: 20%;
+      .cart-image {
+        width: 10rem;
+        height: 10rem;
+        transition: all 0.2s linear;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+
+      .btn-black {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        background-color: #000;
+        color: #fff;
+        margin: 1rem;
+        transition: all 0.2s linear;
+        cursor: pointer;
+        border: 1px solid #fff;
+
+        span {
+          font-size: 1.5rem;
+        }
+
+        &:hover {
+          background-color: #fff;
+          color: #000;
+          border: 1px solid #000;
+        }
+      }
+      .quantity {
+        align-self: center;
+      }
+    }
+
+    .header-small {
+      width: 10%;
+
+      .trash {
+        color: #ffb31a;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.2s linear;
+
+        &:hover {
+          transform: scale(1.1);
+          color: darken(#ffb31a, 10%);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .checkout-page {
+    width: 100%;
+
+    .checkout-header {
+      flex-direction: column;
+      .header-medium {
+        width: 100%;
+        margin: 0.8rem 0;
+      }
+    }
+  }
+}
