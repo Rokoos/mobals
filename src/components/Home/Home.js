@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Phones from "../Phones/Phones";
+import Filtermodal from "../Modal/Filtermodal";
 import { startFetchPhones } from "../../actions";
 import "./home.styles.scss";
 
@@ -11,6 +12,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
+        <Filtermodal />
         <Phones
           phones={this.props.items.phones}
           loading={this.props.items.loading}

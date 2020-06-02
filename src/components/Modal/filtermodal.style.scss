@@ -1,0 +1,13 @@
+.modal-box {
+  margin-top: 7rem;
+
+  .button-box {
+    display: flex;
+    justify-content: center;
+
+    .ui.button {
+      font-family: "Sigmar One", cursive;
+      font-weight: 400;
+    }
+  }
+}
