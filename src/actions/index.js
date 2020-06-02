@@ -53,6 +53,7 @@ export const startFetchPhones = () => {
         });
         dispatch(fetchPhones(phones));
         dispatch(setLoading());
+        dispatch(setPrices(phones));
       });
   };
 };

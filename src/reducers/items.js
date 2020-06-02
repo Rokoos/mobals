@@ -1,4 +1,9 @@
-import { FETCH_PHONES, SET_LOADING } from "../actions/types";
+import {
+  FETCH_PHONES,
+  SET_LOADING,
+  SET_PRICES,
+  SET_FILTERS,
+} from "../actions/types";
 
 const initState = {
   phones: [],
@@ -20,6 +25,18 @@ export default (state = initState, action) => {
       return {
         ...state,
         loading: false,
+      };
+    case SET_PRICES:
+      return {
+        ...state,
+        price: action.maxPrice,
+        maxPrice: action.maxPrice,
+        minPrice: action.minPrice,
+      };
+    case SET_FILTERS:
+      return {
+        ...state,
+        [action.name]: action.value,
       };
 
     default:

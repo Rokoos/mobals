@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Button, Modal } from "semantic-ui-react";
+import Filters from "../Filters/Filters";
 
 import "./filtermodal.style.scss";
 
@@ -22,7 +23,9 @@ class Filtermodal extends React.Component {
         </div>
 
         <Modal dimmer={dimmer} open={open} onClose={this.close}>
-          <Modal.Content>Filters</Modal.Content>
+          <Modal.Content>
+            <Filters phones={this.props.phones} />
+          </Modal.Content>
           <Modal.Actions>
             <Button primary onClick={this.close}>
               OK
