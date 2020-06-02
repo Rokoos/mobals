@@ -38,3 +38,10 @@ export const cartItemsCount = (cartItems) => {
 };
 
 export const getTotalItemPrice = (count, price) => count * price;
+
+export const getMaxPrice = (items) => {
+  return Math.max(...items.map((item) => item.price));
+};
+export const getMinPrice = (items) => {
+  return Math.min(...items.map((item) => item.price));
+};

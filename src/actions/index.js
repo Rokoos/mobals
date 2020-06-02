@@ -7,9 +7,28 @@ import {
   REMOVE_ITEM,
   CLEAR_CART,
   CLEAR_ITEM_FROM_CART,
+  SET_FILTERS,
+  SET_PRICES,
 } from "./types";
+import { getMaxPrice, getMinPrice } from "../utils";
 import { db } from "../firebase/firebase";
 
+export const setFilters = (name, value) => ({
+  type: SET_FILTERS,
+  name,
+  value,
+});
+
+export const setPrices = (data) => {
+  const maxPrice = getMaxPrice(data);
+  const minPrice = getMinPrice(data);
+
+  return {
+    type: SET_PRICES,
+    maxPrice,
+    minPrice,
+  };
+};
 const fetchPhones = (phones) => ({
   type: FETCH_PHONES,
   phones,
