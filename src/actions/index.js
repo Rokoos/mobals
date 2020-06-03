@@ -9,6 +9,7 @@ import {
   CLEAR_ITEM_FROM_CART,
   SET_FILTERS,
   SET_PRICES,
+  SET_CURRENT_USER,
 } from "./types";
 import { getMaxPrice, getMinPrice } from "../utils";
 import { db } from "../firebase/firebase";
@@ -96,4 +97,9 @@ export const clearItemFromCart = (item) => ({
 
 export const clearCart = () => ({
   type: CLEAR_CART,
+});
+
+export const setCurrentUser = (user) => ({
+  type: SET_CURRENT_USER,
+  user,
 });

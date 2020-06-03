@@ -10,3 +10,5 @@ export const CLEAR_CART = "CLEAR_CART";
 
 export const SET_FILTERS = "SET_FILTERS";
 export const SET_PRICES = "SET_PRICES";
+
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
