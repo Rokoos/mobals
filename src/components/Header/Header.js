@@ -3,9 +3,10 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { cartItemsCount } from "../../utils";
+import { signInWithGoogle, auth } from "../../firebase/firebase";
 import "./header.style.scss";
 
-const Header = ({ cartTotalCount }) => {
+const Header = ({ currentUser, cartTotalCount }) => {
   return (
     <div className="phones-header">
       <div className="phones-homepage">
@@ -15,6 +16,15 @@ const Header = ({ cartTotalCount }) => {
       </div>
 
       <div className="phones-options">
+        {currentUser ? (
+          <div onClick={() => auth.signOut()} className="phones-option signBtn">
+            Sign Out
+          </div>
+        ) : (
+          <div onClick={signInWithGoogle} className="phones-option signBtn">
+            Sign In
+          </div>
+        )}
         <Link to="/cart" className="phones-option">
           <AiOutlineShoppingCart
             style={{ fontSize: "2.5rem", color: "#555" }}
@@ -29,5 +39,6 @@ const Header = ({ cartTotalCount }) => {
 };
 const mapStateToProps = (state) => ({
   cartTotalCount: cartItemsCount(state.cart.cartItems),
+  currentUser: state.auth.currentUser,
 });
 export default connect(mapStateToProps)(Header);

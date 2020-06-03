@@ -17,7 +17,7 @@ class Filtermodal extends React.Component {
     return (
       <div className="modal-box">
         <div className="button-box">
-          <Button color="primary" onClick={this.show(true)}>
+          <Button primary onClick={this.show(true)}>
             Filters
           </Button>
         </div>

@@ -6,9 +6,9 @@ import "./filters.style.scss";
 
 const Filters = ({
   phones: { phones, minPrice, maxPrice, price, brand, storage, memory },
-  setFilters
+  setFilters,
 }) => {
-  const handleChange = e => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFilters(name, value);
   };
